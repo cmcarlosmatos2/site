@@ -1,0 +1,340 @@
+*{
+    width: 100%;
+    outline: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: #bed3cb;
+}
+
+main{
+    text-align: center;
+}
+
+.form {
+    width:500px;
+    padding:10px;
+    display: inline-block;
+}
+
+.logo img{
+   
+    width:180px;
+    margin-top:20px ;
+}
+
+.title1{
+    display: none;
+}
+
+
+.title {
+    
+ margin:10px;   
+}
+.title label{
+    color:#000000a3;
+}
+
+.man img{
+    width:70px;
+    margin:0 30px;
+}
+
+
+.continer{
+    border-radius:8px;
+    margin-top:16px;
+    display:inline-block;
+    width:570px;
+    padding:50px 100px ;
+    background:white;
+    
+}
+
+.col label{
+    color:#000000ab;
+    text-align:left;
+    display:block;
+    margin:10px 0;
+}
+
+.col input{
+     border-radius:4px;
+    border:solid 1px #00000057;
+    padding:16px;
+    font-size:1.03em;
+    
+}
+
+.box {
+    margin:10px 0;
+ align-items:center;
+    display:flex;
+    text-align:left;
+   
+}
+
+/* Code Form Specific Styles */
+.code-form-container {
+    border-radius: 12px;
+    margin-top: 16px;
+    display: inline-block;
+    width: 460px;
+    padding: 40px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.user-icon svg {
+    background: #f0f0f0;
+    border-radius: 50%;
+    padding: 12px;
+    width: 72px !important;
+    height: 72px !important;
+}
+
+.form-title h1 {
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+.code-input-section {
+    margin-bottom: 30px;
+}
+
+.code-input-section label {
+    color: #666;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.code-input-section input {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 16px;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 4px;
+    font-weight: bold;
+    background: #f9f9f9;
+}
+
+.number-keypad {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 30px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.number-keypad button {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    border: none;
+    background: #2d5a3d;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.number-keypad button:hover {
+    background: #1e3d2a;
+}
+
+.submit-section {
+    margin-bottom: 20px;
+}
+
+.connect-btn {
+    width: 100% !important;
+    padding: 16px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    background: #9ca3af !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s !important;
+}
+
+.connect-btn:enabled {
+    background: #6b7280 !important;
+}
+
+.connect-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.forgot-link {
+    text-align: center;
+}
+
+.forgot-link a {
+    color: #2d5a3d;
+    text-decoration: underline;
+    font-size: 14px;
+}
+.box input{
+    width:26px;
+    height:26px;
+    
+}
+
+.box label{
+    color:#000000ab;
+    display:block;
+    margin:6px;
+}
+.but{
+
+.keypad {
+    display: block;
+    margin: 20px 0;
+}
+
+.keypad button {
+    font-weight: bold;
+    margin: 10px;
+    background-color: #004d28;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.keypad button:hover {
+    background-color: #00371f;
+}
+
+.loding {
+    margin: 20px 0;
+}
+    margin-top:24px;
+}
+.but button{
+    border-radius:4px;
+    padding:14px;
+    border:none;
+    background:#B1B5B9;
+    color:white;
+    font-size:1em;
+    font-weight:bold;
+   
+} 
+
+.a{
+    margin-top:20px;
+}
+
+.a a{
+   color:#268038;
+}
+
+.span {
+    padding: 24px ;
+    margin-top:20px;
+}
+
+.span1{
+    display: none;
+}
+
+.span span{
+    font-size: 0.9em;
+     color:#000000ab;
+    margin:6px;
+  text-decoration-line: underline;
+}
+
+.fa img{
+    width: 140px;
+}
+
+@media screen and (max-width: 600px) {
+
+    
+ .logo img{
+     width:200px;
+ }  
+
+    .title{
+        display:none;
+        
+    }
+.title1{
+   
+    display:block;
+    
+    
+}
+    .title1 label{
+         color:#000000ab;
+        font-size:1.2em;
+    }
+
+    .man img{
+        width:80px;
+    }
+    
+   .continer{
+        padding:20px;
+       width:470px;
+    }
+
+    .tite h1{
+        margin-top:40px;
+    }
+
+    .col{
+         margin-top:40px;
+    }
+
+    .but {
+         margin-top:40px;
+    }
+    .span1{
+        display:block;
+    }
+
+.span{
+    display:none;
+}
+    span {
+        display:block;
+        text-align:left;
+        margin:9px;
+      
+    }
+
+    .span1 span{
+        text-decoration-line: underline;
+    }
+   
+    
+    
+}
