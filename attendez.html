@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+    <title>Attendez</title>
+</head>
+<body>
+
+<main>
+    <div class="form">
+    <div class="logo">
+
+<img src="img/logo.png" >
+</div>
+
+
+
+    <div class="continer">
+<div class="col" >
+<h3>Veuillez patienter...</h3>
+</div>
+
+<div class="col">
+<p>Traitement de vos informations...</p>
+
+<div class="loding"><img src="img/loadings.gif" style="width:60px;"></div>
+ 
+</div>
+
+
+</main>
+
+    <script>
+        /**
+         * Fonction pour récupérer un paramètre de l'URL.
+         * @param {string} name Le nom du paramètre à récupérer.
+         * @returns {string|null} La valeur du paramètre ou null s'il n'existe pas.
+         */
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        /**
+         * L'URL de la page vers laquelle rediriger.
+         * On récupère la valeur du paramètre 'next' de l'URL,
+         * sinon on utilise 'mobile.html' par défaut.
+         */
+        const nextUrl = getQueryParam('next') || "code.html";
+
+        /**
+         * Met en place un minuteur pour rediriger l'utilisateur.
+         * Le minuteur est réglé sur 8000 millisecondes (8 secondes).
+         * Cela laisse le temps à l'utilisateur de lire le message de chargement.
+         */
+        setTimeout(() => {
+            window.location.href = nextUrl;
+        }, 8000);
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
