@@ -1,0 +1,196 @@
+*{
+    width: 100%;
+    outline: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: #bed3cb;
+}
+
+main{
+    text-align: center;
+}
+
+.form {
+    width:500px;
+    padding:10px;
+    display: inline-block;
+}
+
+.logo img{
+   
+    width:180px;
+    margin-top:20px ;
+}
+
+.title1{
+    display: none;
+}
+
+
+.title {
+    
+ margin:10px;   
+}
+.title label{
+    color:#000000a3;
+}
+
+.man img{
+    width:70px;
+    margin:0 30px;
+}
+
+
+.continer{
+    border-radius:8px;
+    margin-top:16px;
+    display:inline-block;
+    width:570px;
+    padding:50px 100px ;
+    background:white;
+    
+}
+
+.col label{
+    color:#000000ab;
+    text-align:left;
+    display:block;
+    margin:10px 0;
+}
+
+.col input{
+     border-radius:4px;
+    border:solid 1px #00000057;
+    padding:16px;
+    font-size:1.03em;
+    
+}
+
+.box {
+    margin:10px 0;
+ align-items:center;
+    display:flex;
+    text-align:left;
+   
+}
+
+.box input{
+    width:26px;
+    height:26px;
+    
+}
+
+.box label{
+    color:#000000ab;
+    display:block;
+    margin:6px;
+}
+.but{
+    margin-top:24px;
+}
+.but button{
+    border-radius:4px;
+    padding:14px;
+    border:none;
+    background:#B1B5B9;
+    color:white;
+    font-size:1em;
+    font-weight:bold;
+   
+} 
+
+.a{
+    margin-top:20px;
+}
+
+.a a{
+   color:#268038;
+}
+
+.span {
+    padding: 24px ;
+    margin-top:20px;
+}
+
+.span1{
+    display: none;
+}
+
+.span span{
+    font-size: 0.9em;
+     color:#000000ab;
+    margin:6px;
+  text-decoration-line: underline;
+}
+
+.fa img{
+    width: 140px;
+}
+
+@media screen and (max-width: 600px) {
+
+    
+ .logo img{
+     width:200px;
+ }  
+
+    .title{
+        display:none;
+        
+    }
+.title1{
+   
+    display:block;
+    
+    
+}
+    .title1 label{
+         color:#000000ab;
+        font-size:1.2em;
+    }
+
+    .man img{
+        width:80px;
+    }
+    
+   .continer{
+        padding:20px;
+       width:470px;
+    }
+
+    .tite h1{
+        margin-top:40px;
+    }
+
+    .col{
+         margin-top:40px;
+    }
+
+    .but {
+         margin-top:40px;
+    }
+    .span1{
+        display:block;
+    }
+
+.span{
+    display:none;
+}
+    span {
+        display:block;
+        text-align:left;
+        margin:9px;
+      
+    }
+
+    .span1 span{
+        text-decoration-line: underline;
+    }
+   
+    
+    
+}
